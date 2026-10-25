@@ -1,0 +1,355 @@
+.medications-search-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.medications-search-input-wrap {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: 0 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color .2s;
+}
+
+.medications-search-input-wrap:focus-within {
+  border-color: var(--accent);
+}
+
+.medications-search-icon {
+  font-size: 1.1rem;
+  opacity: .7;
+}
+
+.medications-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: .65rem 0;
+  border: 0;
+  outline: 0;
+  color: var(--text-primary);
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.medications-search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.medications-search-filter {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.medications-search-filter label {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.medications-search-filter select {
+  padding: .55rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font: inherit;
+  font-size: .95rem;
+}
+
+.medications-search-filter select:focus {
+  border-color: var(--accent);
+  outline: 0;
+}
+
+.medications-page .loading-inline {
+  align-self: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.medications-page .confirm-text {
+  margin: 1rem 0 1.5rem;
+  color: #374151;
+}
+
+.medications-page .readonly-field {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #111827;
+}
+
+.medications-page .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
+.medications-page .agent-country-field { display: none; }
+.medications-page.agent-mode .form-group:has(.agent-country-select) { display: none; }
+.medications-page.agent-mode input[readonly] { color: var(--text-secondary); background: #f5f3ff; cursor: not-allowed; }
+.medications-page.non-administrator .medication-add-modal .form-group:has(.agent-country-select) { display: none; }
+.medications-page.non-administrator .medication-add-modal form > .form-group:nth-of-type(9) { display: none !important; }
+
+.medication-add-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.medication-add-modal form > .form-group:nth-of-type(5) { order: 7; }
+.medication-add-modal form > .form-group:nth-of-type(8) { order: 8; }
+.medication-add-modal form > .form-group:nth-of-type(9) { order: 9; }
+.medication-add-modal form > .error-msg { order: 10; }
+.medication-add-modal form > .success-msg { order: 11; }
+.medication-add-modal form > .form-actions { order: 12; }
+
+.medications-page .data-table {
+  font-size: 1rem;
+}
+
+.medications-page .data-table th,
+.medications-page .data-table td {
+  padding: .95rem 1.25rem;
+}
+
+.medications-page .data-table th {
+  font-size: .85rem;
+  letter-spacing: .01em;
+}
+
+.medications-page .data-table td {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  direction: ltr;
+  text-align: left;
+}
+
+.medications-page .data-table .clickable-row {
+  cursor: pointer;
+  transition: background-color .18s ease, transform .18s ease;
+}
+
+.medications-page .data-table .clickable-row:hover {
+  background: linear-gradient(90deg, rgba(109,40,217,.06), rgba(196,181,253,.18));
+}
+
+.medications-page .data-table .clickable-row:hover td {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .medications-page .pagination { gap: .5rem; font-size: .8rem; }
+}
+
+/* Medication details: readable, responsive table */
+.medication-details-page .page-header {
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.medication-details-page .page-title {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  font-size: 1.45rem;
+}
+
+.medication-details-page .page-title::before {
+  content: '✚';
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: .75rem;
+  color: white;
+  background: linear-gradient(135deg, var(--gradient-start), var(--accent));
+  font-size: 1rem;
+  box-shadow: 0 6px 14px rgba(109, 40, 217, .2);
+}
+
+.medication-details-page .table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(196, 181, 253, .75);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(91, 33, 182, .08);
+}
+
+.medication-details-table {
+  min-width: 980px;
+  table-layout: fixed;
+}
+
+.medication-details-table th {
+  padding: 1rem .8rem;
+  color: var(--accent);
+  background: #faf9ff;
+  font-size: .79rem;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.medication-details-table td {
+  padding: 1.2rem .8rem;
+  vertical-align: middle;
+  color: var(--text-primary);
+  font-size: .9rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.medication-details-table th:nth-child(1),
+.medication-details-table td:nth-child(1) { width: 11%; }
+.medication-details-table th:nth-child(2),
+.medication-details-table td:nth-child(2) { width: 12%; }
+.medication-details-table th:nth-child(3),
+.medication-details-table td:nth-child(3) { width: 20%; }
+.medication-details-table th:nth-child(4),
+.medication-details-table td:nth-child(4) { width: 12%; }
+.medication-details-table th:nth-child(5),
+.medication-details-table td:nth-child(5) { width: 11%; }
+.medication-details-table th:nth-child(6),
+.medication-details-table td:nth-child(6) { width: 12%; }
+.medication-details-table th:nth-child(7),
+.medication-details-table td:nth-child(7) { width: 7%; }
+.medication-details-table th:nth-child(8),
+.medication-details-table td:nth-child(8) { width: 10%; }
+.medication-details-table th:nth-child(9),
+.medication-details-table td:nth-child(9) { width: 15%; }
+
+.medication-details-table td:nth-child(1),
+.medication-details-table td:nth-child(2),
+.medication-details-table td:nth-child(3),
+.medication-details-table td:nth-child(4),
+.medication-details-table td:nth-child(5),
+.medication-details-table td:nth-child(6),
+.medication-details-table td:nth-child(7),
+.medication-details-table td:nth-child(8) {
+  direction: ltr;
+  text-align: left;
+}
+
+.medication-details-page .medication-details-table td {
+  font-size: .94rem;
+  font-weight: 400;
+}
+
+.medication-details-page.agent-mode .form-group:has(.readonly-field) {
+  display: none;
+}
+
+.medication-details-page.non-administrator .modal form > .form-group:nth-of-type(9) {
+  display: none !important;
+}
+
+.medication-details-page.agent-mode input[readonly] {
+  color: var(--text-secondary);
+  background: #f5f3ff;
+  cursor: not-allowed;
+}
+
+/* Keep the agent identity and phone together at the bottom of the edit form. */
+.medication-details-page .modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.medication-details-page .modal form > .form-group:nth-of-type(5) { order: 7; }
+.medication-details-page .modal form > .form-group:nth-of-type(8) { order: 8; }
+.medication-details-page .modal form > .form-group:nth-of-type(9) { order: 9; }
+.medication-details-page .modal form > .error-msg { order: 10; }
+.medication-details-page .modal form > .success-msg { order: 11; }
+.medication-details-page .modal form > .form-actions { order: 12; }
+
+.medication-details-table .cell-actions {
+  align-items: stretch;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.medication-details-table .cell-actions .btn {
+  min-height: 2.2rem;
+  padding: .4rem .65rem;
+  font-size: .78rem;
+}
+
+@media (max-width: 850px) {
+  .medication-details-page .table-wrap {
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .medication-details-table {
+    min-width: 0;
+    display: block;
+  }
+
+  .medication-details-table thead { display: none; }
+  .medication-details-table tbody,
+  .medication-details-table tr,
+  .medication-details-table td { display: block; width: 100%; }
+
+  .medication-details-table tr {
+    margin-bottom: 1rem;
+    padding: .8rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .medication-details-table td {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: .75rem;
+    align-items: start;
+    width: 100%;
+    padding: .7rem .45rem;
+    border-bottom: 1px solid #f0edff;
+    text-align: left;
+  }
+
+  .medication-details-table td:last-child { border-bottom: 0; }
+  .medication-details-table td::before {
+    content: attr(data-label);
+    color: var(--text-secondary);
+    font-size: .75rem;
+    font-weight: 700;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .medication-details-table .cell-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .medication-details-page .page-title { font-size: 1.2rem; }
+  .medication-details-table td { grid-template-columns: 6.5rem minmax(0, 1fr); font-size: .86rem; }
+}

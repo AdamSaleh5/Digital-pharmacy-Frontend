@@ -1,0 +1,5 @@
+.add-admin-page .page-desc {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}

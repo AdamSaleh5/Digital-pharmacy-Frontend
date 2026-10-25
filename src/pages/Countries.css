@@ -1,0 +1,15 @@
+.countries-description {
+  margin: -0.65rem 0 1.5rem;
+  color: var(--text-secondary);
+}
+
+.countries-page .table-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+.countries-page .data-table { min-width: 520px; }
+.countries-page .modal { max-width: 460px; }

@@ -1,0 +1,94 @@
+.pharmacy-search-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.pharmacy-search-input-wrap {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.pharmacy-search-input-wrap:focus-within {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.pharmacy-search-icon {
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+.pharmacy-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem 0;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+}
+
+.pharmacy-search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.pharmacy-search-input:focus {
+  outline: none;
+}
+
+.pharmacy-search-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pharmacy-search-filter label {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.pharmacy-search-filter select {
+  padding: 0.55rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.pharmacy-search-filter select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.pharmacy-page .confirm-text {
+  margin: 1rem 0 1.5rem;
+  color: var(--text-secondary);
+}
+.pharmacy-page.non-administrator .modal form > .form-group:nth-of-type(5) {
+  display: none !important;
+}
+
+.pharmacy-import-button { font-size: 0; }
+.pharmacy-import-button::after { content: '📥 رفع ملف إكسل '; font-size: .95rem; }
+.pharmacy-import-button:disabled::after { content: '📥  جاري الاستيراد...'; }
